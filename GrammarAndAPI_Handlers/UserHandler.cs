@@ -15,7 +15,7 @@ namespace Jarvis.GrammarAndAPI_Handlers
         {
             using (HttpClient client = new HttpClient())
             {
-                string uri = "http://192.168.1.72/ApiCalls/User.php/" + _userId;
+                string uri = "http://[your server ip]/ApiCalls/User.php/" + _userId;
 
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
