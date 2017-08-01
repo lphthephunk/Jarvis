@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar
+  version="1.0"
+  mode="voice"
+  xml:lang="en-US"
+  tag-format="semantics/1.0"
+  xmlns="http://www.w3.org/2001/06/grammar"
+  root="stop">
+
+  <rule id="stop">
+    <one-of>
+      <item>Shut up</item>
+      <item>Stop</item>
+      <item>That's enough</item>
+    </one-of>
+    <item repeat="0-1">Jarvis</item>
+  </rule>
+  
+</grammar>

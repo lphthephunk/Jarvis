@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar
+  version="1.0"
+  mode="voice"
+  xml:lang="en-US"
+  tag-format="semantics/1.0"
+  xmlns="http://www.w3.org/2001/06/grammar"
+  root="typeRoot">
+  
+  <rule id="typeRoot">
+    <item>is it</item>
+    <one-of>
+      <item repeat="0-1">going to</item>
+    </one-of>
+    <ruleref uri="#weatherType"/>
+    <tag>out.weatherType=rules.latest();</tag>
+    <ruleref uri="#weatherDays"/>
+    <tag>out.weatherDays=rules.latest();</tag>
+  </rule>
+
+  <rule id="weatherType">
+    <one-of>
+      <item>
+        rain<tag>out="rain";</tag>
+      </item>
+      <item>
+        snow<tag>out="snow";</tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="weatherDays">
+    <one-of>
+      <item>
+        today<tag>out="today";</tag>
+      </item>
+      <item>
+        tomorrow<tag>out="tomorrow";</tag>
+      </item>
+      <item>
+        monday<tag>out="monday";</tag>
+      </item>
+      <item>
+        tuesday<tag>out="tuesday";</tag>
+      </item>
+      <item>
+        wednesday<tag>out="wednesday";</tag>
+      </item>
+      <item>
+        thursday<tag>out="thursday";</tag>
+      </item>
+      <item>
+        friday<tag>out="friday";</tag>
+      </item>
+      <item>
+        saturday<tag>out="saturday";</tag>
+      </item>
+      <item>
+        sunday<tag>out="sunday";</tag>
+      </item>
+    </one-of>
+  </rule>
+  
+</grammar>
