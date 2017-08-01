@@ -16,7 +16,7 @@ namespace Jarvis.GrammarAndAPI_Handlers
 
         public static async Task GetWeatherAsync(decimal _latitude, decimal _longitude)
         {
-            string key = "52f1f5c25626cd9f6dc0bda65c75a1aa";
+            string key = "[your api key]";
             // set the uri with the passed in parameters
             string URI = "https://api.darksky.net/forecast/" + key + "/" + _latitude + "," + _longitude;
 
