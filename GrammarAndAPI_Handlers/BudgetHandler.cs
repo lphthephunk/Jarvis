@@ -75,7 +75,7 @@ namespace Jarvis.GrammarAndAPI_Handlers
 
         private static async Task GetBudget(string _month)
         {
-            string uri = "http://192.168.1.72/ApiCalls/Budget.php/month=/"+_month+"/UserId=/"+HandleTags.UserData.UserId;
+            string uri = "http://[Your server id]/ApiCalls/Budget.php/month=/"+_month+"/UserId=/"+HandleTags.UserData.UserId;
 
             using (HttpClient client = new HttpClient())
             {
