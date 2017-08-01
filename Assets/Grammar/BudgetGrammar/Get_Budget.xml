@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar
+  version="1.0"
+  mode="voice"
+  xml:lang="en-US"
+  tag-format="semantics/1.0"
+  xmlns="http://www.w3.org/2001/06/grammar"
+  root="getBudget">
+
+  <rule id="getBudget">
+    <one-of>
+      <item>How much</item>
+      <item>What have</item>
+      <item>How's my</item>
+      <item>What's my</item>
+      <item>What did</item>
+    </one-of>
+    <ruleref uri="#budgetOrSpent"/>
+    <tag>out.budgetOrSpent=rules.latest();</tag>
+    <ruleref uri="#timePeriod"/>
+    <tag>out.timePeriod=rules.latest();</tag>
+  </rule>
+
+  <rule id="budgetOrSpent">
+    <one-of>
+      <item>
+        <tag>out="spent";</tag>
+        <one-of>
+          <item>have I spent</item>
+          <item>I spent</item>
+          <item>I spend</item>
+        </one-of>
+      </item>
+      <item>
+        budget <tag>out="budget";</tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="timePeriod">
+    <one-of>
+      <item>
+        this week <tag>out="thisWeek";</tag>
+      </item>
+      <item>
+        this month <tag>out="thisMonth";</tag>
+      </item>
+      <item>
+        last month <tag>out="lastMonth";</tag>
+      </item>
+    </one-of>
+  </rule>
+
+</grammar>

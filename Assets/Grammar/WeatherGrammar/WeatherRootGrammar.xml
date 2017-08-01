@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar
+  version="1.0"
+  mode="voice"
+  xml:lang="en-US"
+  tag-format="semantics/1.0"
+  xmlns="http://www.w3.org/2001/06/grammar"
+  root="weatherRoot">
+
+  <rule id="weatherRoot"> 
+    <one-of>
+      <item>What's the</item>
+      <item>How's the</item>
+      <item>Get the</item>
+    </one-of>
+    <item>
+      <one-of>
+        <item>weather</item>
+        <item>forecast</item>
+      </one-of>
+    </item>
+    <item>
+      <one-of>
+        <item>on</item>
+        <item>for</item>
+      </one-of>
+    </item>
+    <ruleref uri="#weatherDays"/>
+    <tag>out.weatherDay=rules.latest();</tag>
+  </rule>
+  
+  <rule id="weatherDays">
+    <one-of>
+      <item>today<tag>out="today";</tag></item>
+      <item>tomorrow<tag>out="tomorrow";</tag></item>
+      <item>monday<tag>out="monday";</tag></item>
+      <item>tuesday<tag>out="tuesday";</tag></item>
+      <item>wednesday<tag>out="wednesday";</tag></item>
+      <item>thursday<tag>out="thursday";</tag></item>
+      <item>friday<tag>out="friday";</tag></item>
+      <item>saturday<tag>out="saturday";</tag></item>
+      <item>sunday<tag>out="sunday";</tag></item>
+    </one-of>
+  </rule>
+ 
+</grammar>
